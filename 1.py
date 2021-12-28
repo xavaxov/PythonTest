@@ -68,7 +68,6 @@ while a[finish[0]][finish[1]] == 0 and flag == 0:
 
 if flag == 0:
     cur = finish
-    start
     while cur != start:
         x = cur[0]
         y = cur[1]
