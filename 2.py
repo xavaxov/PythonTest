@@ -9,7 +9,7 @@ m = 15 # количество столбцов
 # c - corner wall
 
 a = [[random.choice(['n','r','d','c']) for j in range(m)] for i in range(n)]
-b = [['0'] * m for i in range(n)]
+b = [[0] * m for i in range(n)]
 c = [[''] * m for i in range(n)]
 
 start = [random.randint(0,n-1), random.randint(0,m-1)] 
@@ -40,16 +40,16 @@ while b[finish[0]][finish[1]] == 0 and flag == 0:
     for i in range(n): 
         for j in range(m):
             if b[i][j] == d:
-                if i+1<n and (a[i][j] != 'd' or a[i][j] != 'c') and b[i+1][j] == 0:
+                if i+1<n and a[i][j] != 'd' and a[i][j] != 'c' and b[i+1][j] == 0:
                         b[i+1][j] = d + 1 
                         flag = 0
-                if i-1>-1 and (a[i-1][j] != 'd' or a[i-1][j] != 'c') and b[i-1][j] == 0:
+                if i-1>-1 and a[i-1][j] != 'd' and a[i-1][j] != 'c' and b[i-1][j] == 0:
                         b[i-1][j] = d + 1
                         flag = 0
-                if j+1<m and (a[i][j] != 'r' or a[i][j] != 'c') and b[i][j+1] == 0:
+                if j+1<m and a[i][j] != 'r' and a[i][j] != 'c' and b[i][j+1] == 0:
                         b[i][j+1] = d + 1 
                         flag = 0
-                if j-1>-1 and (a[i][j-1] != 'r' or a[i][j-1] != 'c') and b[i][j-1] == 0:
+                if j-1>-1 and a[i][j-1] != 'r' and a[i][j-1] != 'c' and b[i][j-1] == 0:
                         b[i][j-1] = d + 1
                         flag = 0
     d = d + 1
